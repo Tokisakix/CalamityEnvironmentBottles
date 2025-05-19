@@ -1,0 +1,8 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	DesertBottle: {
+		DisplayName: Desert Bottle
+		Tooltip: Use to toggle a persistent desert environment effect.
+	}
+}

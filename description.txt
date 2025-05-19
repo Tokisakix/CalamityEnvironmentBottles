@@ -1,0 +1,5 @@
+Calamity Environment Bottles is a utility mod for Terraria's Calamity Mod, designed to enhance control over the unique environments introduced by Calamity.
+
+Author: Tokisakix
+Repository: https://github.com/Tokisakix/Calamity-Environment-Bottles
+Current Version: 0.0.0 (Initial Release)

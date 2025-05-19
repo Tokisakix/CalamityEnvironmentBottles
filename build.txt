@@ -1,0 +1,5 @@
+displayName = Calamity Environment Bottles
+author = Tokisakix
+version = 0.0.0
+
+dependencies = CalamityMod, CalamityModMusic
