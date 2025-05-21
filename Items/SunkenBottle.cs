@@ -11,8 +11,8 @@ namespace CalamityEnvironmentBottles.Items
     {
         public override void SetDefaults()
         {
-            Item.width = 40;
-            Item.height = 40;
+            Item.width = 48;
+            Item.height = 71;
             Item.value = Item.sellPrice(silver: 50);
             Item.rare = ItemRarityID.Green;
             Item.useStyle = ItemUseStyleID.HoldUp;
@@ -29,7 +29,7 @@ namespace CalamityEnvironmentBottles.Items
         {
             var envPlayer = player.GetModPlayer<CalamityEnvironmentPlayer>();
             envPlayer.IsSunkenEffectActive = !envPlayer.IsSunkenEffectActive;
-            Main.NewText(envPlayer.IsSunkenEffectActive ? "Sunken Sea effect activated!" : "Sunken Sea effect deactivated!", 255, 255, 0);
+            // Main.NewText(envPlayer.IsSunkenEffectActive ? "Sunken Sea effect activated!" : "Sunken Sea effect deactivated!", 255, 255, 0);
             return true;
         }
 
