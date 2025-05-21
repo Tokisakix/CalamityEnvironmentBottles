@@ -5,4 +5,9 @@ Items: {
 		DisplayName: Desert Bottle
 		Tooltip: Use to toggle a persistent desert environment effect.
 	}
+
+	SunkenBottle: {
+		DisplayName: Sunken Bottle
+		Tooltip: Use to toggle a persistent Sunken Sea environment effect.
+	}
 }

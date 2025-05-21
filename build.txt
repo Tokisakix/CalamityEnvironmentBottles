@@ -2,4 +2,7 @@ displayName = Calamity Environment Bottles
 author = Tokisakix
 version = 0.0.0
 
+modReferences = CalamityMod
+weakReferences =  CalamityModMusic
+
 dependencies = CalamityMod, CalamityModMusic
