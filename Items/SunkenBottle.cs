@@ -15,23 +15,23 @@ namespace CalamityEnvironmentBottles.Items
             Item.height = 71;
             Item.value = Item.sellPrice(silver: 50);
             Item.rare = ItemRarityID.Green;
-            Item.useStyle = ItemUseStyleID.HoldUp;
+            // Item.useStyle = ItemUseStyleID.HoldUp;
             Item.useTime = 20;
             Item.useAnimation = 20;
-            Item.useTurn = true;
+            Item.useTurn = false;
             Item.autoReuse = false;
             Item.consumable = false;
             Item.maxStack = 1;
             Item.UseSound = SoundID.Item4;
         }
 
-        public override bool? UseItem(Player player)
-        {
-            var envPlayer = player.GetModPlayer<CalamityEnvironmentPlayer>();
-            envPlayer.IsSunkenEffectActive = !envPlayer.IsSunkenEffectActive;
-            // Main.NewText(envPlayer.IsSunkenEffectActive ? "Sunken Sea effect activated!" : "Sunken Sea effect deactivated!", 255, 255, 0);
-            return true;
-        }
+        // public override bool? UseItem(Player player)
+        // {
+        //     var envPlayer = player.GetModPlayer<CalamityEnvironmentPlayer>();
+        //     envPlayer.IsSunkenEffectActive = !envPlayer.IsSunkenEffectActive;
+        //     // Main.NewText(envPlayer.IsSunkenEffectActive ? "Sunken Sea effect activated!" : "Sunken Sea effect deactivated!", 255, 255, 0);
+        //     return true;
+        // }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
@@ -44,6 +44,17 @@ namespace CalamityEnvironmentBottles.Items
                 }
             }
         }
+
+        public override void RightClick(Player player)
+        {
+            var envPlayer = player.GetModPlayer<CalamityEnvironmentPlayer>();
+            envPlayer.IsSunkenEffectActive = !envPlayer.IsSunkenEffectActive;
+            // Main.NewText(envPlayer.IsSunkenEffectActive ? "Sunken Sea effect activated!" : "Sunken Sea effect deactivated!", 255, 255, 0);
+        }
+
+        public override bool ConsumeItem(Player player) => false;
+
+        public override bool CanRightClick() => true;
 
         public override void AddRecipes()
         {
