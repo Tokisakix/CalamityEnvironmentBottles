@@ -10,15 +10,17 @@ namespace CalamityEnvironmentBottles.Players
     {
         public bool IsSunkenEffectActive { get; set; } = false;
         public bool IsAstralEffectActive { get; set; } = false;
+        public bool IsCragEffectActive { get; set; } = false;
 
         public override void PostUpdateMiscEffects()
         {
             UpdateSunkenEffect();
             UpdateAstralEffect();
+            UpdateCragEffect();
         }
 
         void UpdateSunkenEffect()
-        { 
+        {
             if (IsSunkenEffectActive)
             {
                 BiomeTileCounterSystem.SunkenSeaTiles = 151;
@@ -30,14 +32,31 @@ namespace CalamityEnvironmentBottles.Players
         }
 
         void UpdateAstralEffect()
-        { 
+        {
             if (IsAstralEffectActive)
             {
                 BiomeTileCounterSystem.AstralTiles = 951;
             }
-            else if (BiomeTileCounterSystem.SunkenSeaTiles > 950 && !Main.LocalPlayer.Calamity().ZoneAstral)
+            else if (BiomeTileCounterSystem.AstralTiles > 950 && !Main.LocalPlayer.Calamity().ZoneAstral)
             {
                 BiomeTileCounterSystem.AstralTiles = 0;
+            }
+        }
+
+        void UpdateCragEffect()
+        {
+            if (!Main.LocalPlayer.ZoneUnderworldHeight)
+            {
+                IsCragEffectActive = false;
+            }
+
+            if (IsCragEffectActive)
+            {
+                BiomeTileCounterSystem.BrimstoneCragTiles = 101;
+            }
+            else if (BiomeTileCounterSystem.BrimstoneCragTiles > 100 && !Main.LocalPlayer.Calamity().ZoneCalamity)
+            {
+                BiomeTileCounterSystem.BrimstoneCragTiles = 0;
             }
         }
     }
