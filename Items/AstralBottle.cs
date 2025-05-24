@@ -7,7 +7,7 @@ using CalamityMod;
 
 namespace CalamityEnvironmentBottles.Items
 {
-    public class SunkenBottle : ModItem
+    public class AstralBottle : ModItem
     {
         public override void SetDefaults()
         {
@@ -31,18 +31,18 @@ namespace CalamityEnvironmentBottles.Items
             {
                 if (line.Mod == "Terraria" && line.Name == "ItemName")
                 {
-                    line.Text = envPlayer.IsSunkenEffectActive ? "Sunken Bottle (Activated)" : "Sunken Bottle";
+                    line.Text = envPlayer.IsAstralEffectActive ? "Astral Bottle (Activated)" : "Astral Bottle";
                 }
             }
-            tooltips.Add(new TooltipLine(Mod, "Tooltip0", "Contains a young Ghost Bell Jellyfish"));
-            tooltips.Add(new TooltipLine(Mod, "Tooltip1", "Carrying it in your inventory feels like being in the Sunken Sea"));
+            tooltips.Add(new TooltipLine(Mod, "Tooltip0", "Contains a piece of Starblight Soot"));
+            tooltips.Add(new TooltipLine(Mod, "Tooltip1", "Carrying it in your inventory feels like being in the Astral Infection"));
             tooltips.Add(new TooltipLine(Mod, "Tooltip2", "Right-click to toggle on/off"));
         }
 
         public override void RightClick(Player player)
         {
             var envPlayer = player.GetModPlayer<CalamityEnvironmentPlayer>();
-            envPlayer.IsSunkenEffectActive = !envPlayer.IsSunkenEffectActive;
+            envPlayer.IsAstralEffectActive = !envPlayer.IsAstralEffectActive;
         }
 
         public override bool ConsumeItem(Player player) => false;
@@ -53,7 +53,7 @@ namespace CalamityEnvironmentBottles.Items
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Bottle, 1);
-            recipe.AddCondition(new Condition("In Sunken Sea", () => Main.LocalPlayer.Calamity().ZoneSunkenSea));
+            recipe.AddCondition(new Condition("In Astral Infection", () => Main.LocalPlayer.Calamity().ZoneAstral));
             recipe.Register();
         }
     }

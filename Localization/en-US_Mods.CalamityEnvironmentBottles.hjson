@@ -3,11 +3,11 @@
 Items: {
 	SunkenBottle: {
 		DisplayName: Sunken Bottle
-		Tooltip: Use to toggle a persistent Sunken Sea environment effect.
+		Tooltip: ""
 	}
 
-	DesertBottle: {
+	AstralBottle: {
+		DisplayName: Astral Bottle
 		Tooltip: ""
-		DisplayName: Desert Bottle
 	}
 }
